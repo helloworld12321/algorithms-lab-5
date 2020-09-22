@@ -1,0 +1,51 @@
+There are two properties of our algorithm.
+
+1) Each programmer is eventually hired by a company (and so the algorithm
+eventually stops), and
+
+2) when the algorithm stops, the pairings are satisfactory.
+
+---
+
+To see the first property, let's try to prove a contradiction. Suppose that
+programmer P has gotten to the end of their preferences list and still isn't
+hired. Then some company C must not have an employee.
+
+Now, P must have interviewed with C at some point in the past. If C doesn't
+have any employees now, they must not have had any employees back then, either.
+
+(There's no way for a company to have an employee at one point and then lose
+that employee; if they fire one programmer, they always hire another to replace
+the one they lost.)
+
+But, since C didn't have any employees when P interviewed with them, C would
+have hired P.
+
+So, by contradiction, P must be hired before they get all the way through their
+list of preferences.
+
+---
+
+To see the second property, let's prove another contradiction. Suppose that
+programmer P is with company BadC, and company C has employed programmer BadP.
+Suppose this is an unsatisfactory pairing, that is, P would much rather work
+at C, and C would much rather employ P.
+
+Now, P interviews with companies in order from P's favorite to P's least
+favorite. So, since P likes C better than BadC, P would have interviewed with C
+before BadC.
+
+Now, consider that interview. Either C hired P, or they didn't. In either case,
+there's no way they could have ended up with BadP later.
+
+If C hired P, then they must have later fired P in favor of a programmer they
+liked more. But every time C hires a new programmer, they always hire someone
+they liked better than the all of their old programmers. There's no way they
+could have hired BadP then, since they don't like BadP any better than C.
+
+Similarly, if C didn't hire P, they must have already had a programmer P-prime
+they liked more than P. In that case, they couldn't have traded up for BadP,
+since they like P-prime better than they like BadP.
+
+So, by contradiction, unsatisfactory pairings cannot exist when the algorithm
+terminates.

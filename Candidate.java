@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * @author Jon Reuvers, Joe Walbran
+ * @author Jon Reuvers, Nicolas Robertson, Joe Walbran
  */
 public class Candidate {
     boolean isCompany;
@@ -24,6 +24,16 @@ public class Candidate {
 
     public ArrayList<String> getRankings() {
         return rankings;
+    }
+
+    public Candidate getPreferredCompany(int index, ArrayList<Candidate> companies) {
+        String companyIdentifier = this.rankings.get(index);
+        for (int i = 0; i < companies.size(); i++) {
+            if (companyIdentifier.equals(companies.get(i).getIdentifier())) {
+                return companies.get(i);
+            }
+        }
+        throw new RuntimeException("No company found with the identifier '" + companyIdentifier + "'");
     }
 
     public String toString() {

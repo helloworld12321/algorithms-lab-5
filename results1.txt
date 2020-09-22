@@ -1,0 +1,6 @@
+Pairings:
+B: 3
+D: 1
+A: 5
+C: 4
+E: 2

@@ -1,0 +1,34 @@
+Our algorithm is based on "interviews" where a company decides whether or not
+to hire a particular programmer. Three things can happen at an interview:
+
+1. If the company doesn't have an employee yet, they hire this programmer
+immediately.
+
+2. If the company has an employee, but they like this programmer better, they
+fire their old employee and hire this employee.
+
+3. If the company has an employee, and prefers them to this programmer, they
+decline to hire this programmer.
+
+At the beginning of the algorithm, no company has employees. Then, we go
+through rounds of interviews.
+
+In the first round, each unemployed programmer interviews with their favorite
+company, and then their second-favorite company, and so on, until they find a
+company that will hire them.
+
+In the second round, some programmers may still be unemployed, if they were
+hired by a company that later fired them in favor of someone else. These
+programmers remember their position in their preferences list, and pick up
+the interviews where they left off last time. (The fact that they don't
+backtrack is necessary to make sure that the algorithm terminates.)
+
+We keep having rounds of interviews until every company has an employee and
+every programmer has an employer.
+
+A full explanation for why this algorithm is correct can be found in
+`correctnessExplanation.txt`, but intuitively, you can see why this generates
+satisfactory pairings: since programmers work their way down their preferences
+list, they always end up with their favorite company that's willing to take
+them, and since companies always hire the best programmer they've seen, they
+hire their favorite programmers that are willing to work there.

@@ -1,0 +1,14 @@
+The efficiency our algorithm in the worst case would be Theta(n^3).
+
+Checking whether a company wants to hire a programmer--the inside
+of the while loop from lines 108 to 130--is Theta(n). (This is because
+of operations like "getPreferredCompany" and "indexOf" take linear time.)
+
+And, we check if a company wants to hire a programmer at most n^2 times;
+after each programmer interviews with a company, they cross that company
+off of their list, never to return. So, it's impossible to conduct more
+interviews than (the number of programmers) times (the number of
+companies), which is n^2.
+
+Thus, in the worst case where each programmer's options are
+examined and then reexamined, the program would run in n^3 time.
